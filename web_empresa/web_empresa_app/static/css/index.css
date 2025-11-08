@@ -1,4 +1,20 @@
-/* Estilos Globales y Reset Básico */
+/* 1. Importación de Fuente Minimalista */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* 2. Variables de Color (Basadas en la imagen) */
+:root {
+    /* Colores Principales de la Paleta */
+    --color-bg-dark: #0D1B2A;       
+    --color-bg-secondary: #1B263B;  
+    --color-text-light: #E0E1DD;    
+    --color-text-secondary: #778DA9;
+    --color-border: #415A77;        
+
+    /* Color de Acento */
+    --color-accent-primary: #59EE8F; 
+}
+
+/* 3. Reset y Estilos Base */
 * {
     margin: 0;
     padding: 0;
@@ -6,183 +22,395 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    /* Fondo principal oscuro de la imagen */
-    background-color: #121f1a; 
-}
-
-/* --- SECCIÓN PRINCIPAL (HERO) --- */
-.hero-section {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    line-height: 1.6;
     min-height: 100vh;
-    padding: 0 5%;
-    /* Se necesitaría un CSS/SVG complejo para el fondo de líneas */
+    overflow-x: hidden; 
 }
 
-/* --- BARRA DE NAVEGACIÓN (HEADER) --- */
-.navbar {
+a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-accent-primary);
+}
+
+/* 4. Barra Superior (Top Bar) */
+.top-bar {
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+.top-bar a {
+    color: var(--color-accent-primary);
+    font-weight: 600;
+}
+
+/* 5. Encabezado y Navegación */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.logo {
-    font-size: 24px;
+.logo span {
+    font-size: 1.5em;
     font-weight: 700;
-    color: #aaff00; /* Color verde brillante */
-}
-
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 14px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 1;
-}
-
-.buy-button {
-    background-color: #aaff00; /* Color verde brillante */
-    color: #000;
-    border: none;
-    padding: 10px 25px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.buy-button:hover {
-    background-color: #88ee00;
-}
-
-/* --- CONTENIDO CENTRAL (MAIN CONTENT) --- */
-.main-content {
-    text-align: center;
-    padding: 100px 0 50px;
-}
-
-.main-content h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.main-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.8;
-}
-
-.view-demo-button {
-    background-color: #aaff00; /* Color verde brillante */
-    color: #000;
-    border: none;
-    padding: 15px 35px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-/* --- SECCIÓN DEL PORTÁTIL (MOCKUP) --- */
-.mockup-section {
+    color: var(--color-text-light);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
 }
 
-.laptop-frame {
-    /* Simulación del marco del portátil */
-    width: 80%;
+.logo img {
+    height: 24px; 
+    margin-right: 8px;
+    filter: brightness(0) invert(1); 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+}
+
+.nav-menu a {
+    color: var(--color-text-secondary);
+    font-size: 0.95em;
+}
+
+.nav-menu a:hover {
+    color: var(--color-text-light);
+}
+
+/* 6. Botones (CTA) */
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-buy {
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg-dark); 
+}
+
+.btn-buy:hover {
+    background-color: #38c86d; 
+    color: var(--color-bg-dark);
+}
+
+.btn-primary {
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg-dark);
+    padding: 15px 30px;
+    font-size: 1em;
+    margin-top: 30px;
+}
+
+/* 7. Sección Principal (Hero Section) */
+.hero-section {
+    text-align: center;
+    padding: 50px 5% 0;
     max-width: 1200px;
-    height: 550px;
-    background-color: #222; /* Color oscuro del chasis */
-    border-radius: 30px;
-    border: 15px solid #282828;
+    margin: 0 auto;
     position: relative;
-    /* Efecto de inclinación inferior sutil */
-    transform: perspective(1000px) rotateX(5deg); 
-    box-shadow: 0 50px 80px rgba(0, 0, 0, 0.5);
+    /* Fondo con líneas geométricas */
+    background-image: linear-gradient(rgba(13, 27, 42, 0.9) 2px, transparent 2px),
+                      linear-gradient(90deg, rgba(13, 27, 42, 0.9) 2px, transparent 2px);
+    background-size: 50px 50px;
+}
+
+.hero-content {
+    padding-bottom: 80px;
+    z-index: 10;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: var(--color-text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* 8. Contenedor de Presentación Visual (Product Showcase) */
+.product-showcase {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.macbook-frame {
+    width: 80%;
+    max-width: 1000px;
+    background-color: var(--color-bg-secondary);
+    border-radius: 15px 15px 0 0; 
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    position: relative;
+    transform: translateY(0px); 
+}
+
+/* Base de la 'laptop' */
+.macbook-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 10%;
+    right: 10%;
+    height: 15px;
+    background-color: #0b1520;
+    border-radius: 0 0 10px 10px;
 }
 
 .screen-content {
-    /* Contenido dentro de la pantalla (el área verde y blanca) */
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, #aaff00 30%, #fff 30%); /* Verde a la izquierda, Blanco a la derecha */
-    border-radius: 15px;
+    background-color: var(--color-bg-dark);
+    border-radius: 10px;
     overflow: hidden;
     padding: 20px;
+    min-height: 450px; 
 }
 
-/* Estilos de los elementos dentro de la pantalla */
-.screen-navbar {
+.header-mockup {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 40px;
+    background-color: var(--color-accent-primary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: var(--color-bg-dark);
+    margin-bottom: 20px;
 }
 
-.screen-logo {
-    color: #000;
+.logo-mockup {
     font-weight: 700;
+    font-size: 1.1em;
 }
 
-.screen-contact {
-    background-color: #000;
-    color: #fff;
-    padding: 5px 15px;
+.nav-mockup a {
+    color: var(--color-bg-dark);
+    margin-left: 15px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.contact-btn-mockup {
+    background: var(--color-bg-dark);
+    color: var(--color-accent-primary);
     border: none;
-    border-radius: 5px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.digital-hub-content {
+/* Contenido Principal de la Pantalla (Mockup) */
+.main-mockup {
     display: flex;
-    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
 }
 
-.digital-hub-content h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: #000;
-    width: 40%;
+.text-mockup {
+    text-align: left;
+    max-width: 45%;
 }
 
-.image-placeholder {
-    background-color: #f0f0f0;
-    height: 250px;
-    width: 50%;
-    margin-left: auto;
+.text-mockup h2 {
+    font-size: 3em;
+    font-weight: 800;
+    color: var(--color-accent-primary);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.text-mockup p {
+    color: var(--color-text-light);
+    font-size: 1em;
+}
+
+.image-mockup img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); 
+}
+
+/* Iconos de Tecnología (Mockup) */
+.tech-icons-mockup {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--color-text-secondary);
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
+    gap: 15px;
+}
+
+/* 9. Elementos Flotantes al Pie */
+.floating-buy-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #2e2e2e;
+    padding: 8px 15px;
+    border-radius: 4px;
+    z-index: 100;
+    font-size: 0.9em;
+}
+
+.floating-buy-btn a {
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.bottom-bar-template {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
-    border-radius: 10px;
+    gap: 25px;
+    padding: 10px 0;
+    font-size: 0.85em;
+    z-index: 90;
+    
 }
 
-/* Elementos debajo del portátil */
-.tags-row {
-    margin-top: 50px;
-    display: flex;
-    gap: 30px;
-    opacity: 0.6;
+/* 10. Media Queries para Responsive Design */
+
+/* --- Tablet (Pantallas hasta 1024px) --- */
+@media (max-width: 1024px) {
+    /* Header */
+    .nav-menu ul {
+        gap: 20px;
+    }
+    
+    /* Hero */
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    /* Showcase Mockup */
+    .macbook-frame {
+        width: 90%;
+    }
+    
+    .main-mockup {
+        flex-direction: column;
+        padding: 30px 10px;
+        gap: 25px;
+    }
+
+    .text-mockup {
+        max-width: 90%;
+        text-align: center;
+    }
+    .text-mockup h2 {
+        font-size: 2.5em;
+    }
+    
+    .image-mockup {
+        order: -1; /* Mover la imagen arriba en la columna */
+    }
+    
+    /* Mockup Header simplificado */
+    .nav-mockup {
+        display: none; 
+    }
+    .header-mockup {
+        justify-content: center;
+        gap: 30px;
+    }
 }
 
-.tags-row span {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
+/* --- Móvil (Pantallas hasta 768px) --- */
+@media (max-width: 768px) {
+    .top-bar {
+        font-size: 0.75em;
+    }
+
+    /* Header */
+    .header {
+        padding: 15px 5%;
+        /* El menú de navegación se oculta para simplificar en móvil */
+    }
+    .nav-menu {
+        display: none;
+    }
+    .btn-buy {
+        display: none; /* Ocultar el botón Buy Now del header */
+    }
+    
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+
+    /* Showcase Mockup */
+    .macbook-frame {
+        width: 95%;
+        padding: 10px;
+    }
+    .screen-content {
+        min-height: 350px;
+        padding: 10px;
+    }
+    .text-mockup h2 {
+        font-size: 1.8em;
+    }
+    .tech-icons-mockup {
+        justify-content: space-around;
+        gap: 10px;
+    }
+    
+    /* Elementos fijos */
+    .floating-buy-btn {
+        bottom: 10px;
+        left: 10px;
+    }
+    
+    /* La barra inferior se simplifica o se oculta */
+    .bottom-bar-template {
+        display: none; 
+    }
 }
