@@ -1,0 +1,188 @@
+/* Estilos Globales y Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    /* Fondo principal oscuro de la imagen */
+    background-color: #121f1a; 
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+    min-height: 100vh;
+    padding: 0 5%;
+    /* Se necesitaría un CSS/SVG complejo para el fondo de líneas */
+}
+
+/* --- BARRA DE NAVEGACIÓN (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #aaff00; /* Color verde brillante */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.buy-button {
+    background-color: #aaff00; /* Color verde brillante */
+    color: #000;
+    border: none;
+    padding: 10px 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #88ee00;
+}
+
+/* --- CONTENIDO CENTRAL (MAIN CONTENT) --- */
+.main-content {
+    text-align: center;
+    padding: 100px 0 50px;
+}
+
+.main-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.main-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.view-demo-button {
+    background-color: #aaff00; /* Color verde brillante */
+    color: #000;
+    border: none;
+    padding: 15px 35px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* --- SECCIÓN DEL PORTÁTIL (MOCKUP) --- */
+.mockup-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.laptop-frame {
+    /* Simulación del marco del portátil */
+    width: 80%;
+    max-width: 1200px;
+    height: 550px;
+    background-color: #222; /* Color oscuro del chasis */
+    border-radius: 30px;
+    border: 15px solid #282828;
+    position: relative;
+    /* Efecto de inclinación inferior sutil */
+    transform: perspective(1000px) rotateX(5deg); 
+    box-shadow: 0 50px 80px rgba(0, 0, 0, 0.5);
+}
+
+.screen-content {
+    /* Contenido dentro de la pantalla (el área verde y blanca) */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #aaff00 30%, #fff 30%); /* Verde a la izquierda, Blanco a la derecha */
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Estilos de los elementos dentro de la pantalla */
+.screen-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.screen-logo {
+    color: #000;
+    font-weight: 700;
+}
+
+.screen-contact {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.digital-hub-content {
+    display: flex;
+    padding: 20px;
+}
+
+.digital-hub-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    width: 40%;
+}
+
+.image-placeholder {
+    background-color: #f0f0f0;
+    height: 250px;
+    width: 50%;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 10px;
+}
+
+/* Elementos debajo del portátil */
+.tags-row {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    opacity: 0.6;
+}
+
+.tags-row span {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
