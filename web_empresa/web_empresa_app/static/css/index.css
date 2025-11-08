@@ -464,3 +464,156 @@ a:hover {
 
 /* Nota: Los porcentajes (top, left, width, height) pueden necesitar ajustes finos (p. ej., de 5.5% a 6%) 
    dependiendo de la imagen exacta del portátil que uses. */
+
+
+/*
+  IMPORTANTE: Para que el diseño se vea exactamente como en la imagen,
+  es necesario usar una fuente con un estilo similar a "Poppins"
+  o "Montserrat" para el texto principal y una fuente serif/bold
+  para el encabezado, si no está ya configurada en el navegador.
+*/
+
+:root {
+    /* Variables de color para fácil mantenimiento */
+    --color-principal: #000000;
+    --color-fondo: #ffffff;
+    --color-texto-gris: #555555;
+    --color-borde-gris: #cccccc;
+}
+
+/* 1. Estilos Globales y Tipografía */
+body {
+    font-family: 'Arial', sans-serif; /* Cambiar a la fuente deseada (ej. Poppins) */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Un gris muy claro para el fondo de la página */
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. Contenedor Principal */
+.contenedor-principal {
+    width: 90%;
+    max-width: 1000px; /* Limita el ancho total del diseño */
+    background-color: var(--color-fondo);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* 3. Encabezado */
+.encabezado-conversaciones {
+    margin-bottom: 30px;
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el diseño de cuadrícula */
+}
+
+.encabezado-conversaciones h1 {
+    font-size: 3.5rem; /* Título grande de alto impacto */
+    font-weight: 800; /* Negrita pesada */
+    line-height: 1.1;
+    color: var(--color-principal);
+    margin: 0;
+}
+
+/* 4. Contenido de Doble Columna (Main) */
+.contenido-doble {
+    display: flex;
+    gap: 50px; /* Espacio entre la imagen y las acciones */
+}
+
+/* Asegura que el contenido se ajuste si la pantalla es muy pequeña */
+@media (max-width: 850px) {
+    .contenido-doble {
+        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
+        gap: 30px;
+    }
+}
+
+/* 5. Sección de la Imagen */
+.seccion-imagen {
+    flex: 1; /* Ocupa 1 parte del espacio disponible */
+    min-width: 0;
+}
+
+.seccion-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 6. Sección de Acciones (Derecha) */
+.seccion-acciones {
+    flex: 1.2; /* Ocupa un poco más de espacio que la imagen */
+    color: var(--color-texto-gris);
+    font-size: 1rem;
+}
+
+.descripcion-organizacion {
+    margin-top: 0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: var(--color-texto-gris);
+}
+
+/* 7. Contenedor de Botones (Grid) */
+.contenedor-botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 15px; /* Espacio entre los botones */
+    margin-bottom: 40px;
+}
+
+.boton-accion {
+    background-color: var(--color-principal);
+    color: var(--color-fondo);
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid var(--color-principal); /* Borde para el efecto hover */
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+}
+
+.boton-accion:hover {
+    background-color: var(--color-fondo);
+    color: var(--color-principal);
+    cursor: pointer;
+}
+
+/* 8. Separador y Redes Sociales */
+.separador-social {
+    border: none;
+    border-top: 1px solid var(--color-borde-gris);
+    margin: 40px 0 20px 0;
+}
+
+.titulo-social {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-bottom: 15px;
+}
+
+.iconos-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5rem; /* Tamaño de los iconos/emojis */
+}
+
+.icono-social {
+    color: var(--color-principal);
+    transition: color 0.3s;
+}
+
+.icono-social:hover {
+    color: var(--color-texto-gris);
+}
