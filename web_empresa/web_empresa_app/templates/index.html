@@ -2,90 +2,48 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeniqs - IT Services & Solutions</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
+
 <body>
-
-    <div class="top-bar">
-        <p>On Sale For a Very Limited Time! <a href="#buy-now">Buy Now ‣</a></p>
-    </div>
-
     <header class="header">
         <div class="logo">
             <span><img src="logo.png" alt="Zeniqs Logo"> Zeniqs</span>
         </div>
         <nav class="nav-menu">
             <ul>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#pages">Inner Pages</a></li>
-                <li><a href="#feature">Feature</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="">Quienes somos</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Nuestros Trabajos</a></li>
+                <li><a href="">Clientes</a></li>
             </ul>
         </nav>
-        <a href="#buy-now" class="btn btn-buy">Buy Now</a>
+        <a href="#buy-now" class="btn btn-buy">Contacto</a>
     </header>
 
     <section class="hero-section">
         <div class="hero-content">
             <h1>IT Services, IT Technology & IT Solutions Template</h1>
             <p>Elevate your website development expertise and supercharge your efficiency.</p>
-            <a href="#view-demo" class="btn btn-primary">View Demo <span>→</span></a>
+            <a href="#view-demo" class="btn btn-primary">Explorar <span>→</span></a>
         </div>
 
-        <div class="product-showcase">
-            <div class="macbook-frame">
-                <div class="screen-content">
-                    <div class="header-mockup">
-                        <div class="logo-mockup">Zeniqs</div>
-                        <nav class="nav-mockup">
-                            <a href="#">Demo</a>
-                            <a href="#">Pages</a>
-                            <a href="#">Portfolio</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Contact</a>
-                        </nav>
-                        <button class="contact-btn-mockup">Contact Now <span>→</span></button>
-                    </div>
-                    <div class="main-mockup">
-                        <div class="text-mockup">
-                            <h2>DIGITAL SOLUTION HUB</h2>
-                            <p>Here's a brief placeholder text describing the digital solution hub and its benefits.</p>
-                        </div>
-                        <div class="image-mockup">
-                            <img src="solution_mockup.png" alt="Digital Solution Hub Mockup">
-                        </div>
-                    </div>
-                    <div class="tech-icons-mockup">
-                        <span>html5</span>
-                        <span>javascript</span>
-                        <span>php</span>
-                        <span>scss</span>
-                        <span>webpack</span>
-                        <span>gulp</span>
-                        <span>EPHN</span>
-                    </div>
+        <div class="product-showcase-container">
+            <div class="macbook-mockup-frame">
+                <img src="{% static 'img/image-removebg-preview.png' %}" alt="Notebook Frame" class="macbook-frame-image">
+
+                <div class="screen-content-overlay">
+                    <img src="{% static 'img/fondo.png' %}" alt="Contenido de la pantalla" class="screen-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="floating-buy-btn">
-        <a href="#buy-envato">BUY ON **#envato**</a>
-    </div>
-
-    <div class="bottom-bar-template">
-        <a href="#pre-built">Pre-Built Template</a>
-        <a href="#inner">Zeniqs Inner</a>
-        <a href="#feature-link">Feature</a>
-        <a href="#faq-link">FAQ</a>
-        <a href="#buy-now-footer" class="btn btn-buy-footer">Buy Now</a>
-    </div>
-
 </body>
+
 </html>

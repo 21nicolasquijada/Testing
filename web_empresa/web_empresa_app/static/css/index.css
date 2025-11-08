@@ -121,7 +121,7 @@ a:hover {
     background-color: var(--color-accent-primary);
     color: var(--color-bg-dark);
     padding: 15px 30px;
-    font-size: 1em;
+    font-size: 0.9em;
     margin-top: 30px;
 }
 
@@ -139,13 +139,12 @@ a:hover {
 }
 
 .hero-content {
-    padding-bottom: 80px;
     z-index: 10;
     position: relative;
 }
 
 .hero-content h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -154,7 +153,7 @@ a:hover {
 .hero-content p {
     font-size: 1.2em;
     color: var(--color-text-secondary);
-    max-width: 650px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -414,3 +413,54 @@ a:hover {
         display: none; 
     }
 }
+
+/* 8. Contenedor de Presentación Visual (Product Showcase) - REEMPLAZO */
+
+.product-showcase-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 100px;
+    margin-top: 0; /* Separación del texto principal */
+}
+
+.macbook-mockup-frame {
+    /* Establece el contexto de posicionamiento para los elementos internos */
+    position: relative; 
+    width: 80%; /* Ancho general del mockup */
+    max-width: 900px; /* Ancho máximo */
+    height: auto;
+}
+
+.macbook-frame-image {
+    /* La imagen del portátil siempre ocupará todo el contenedor */
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 10; /* Asegura que el marco esté por encima de la pantalla */
+}
+
+.screen-content-overlay {
+    /* Posicionamiento y tamaño del área de la pantalla */
+    position: absolute;
+    top: 10%;    /* Ajuste superior, depende del marco de la imagen */
+    left: 13%;  /* Ajuste izquierdo */
+    width: 75%;   /* Ancho de la pantalla */
+    height: 78%;  /* Altura de la pantalla */
+    z-index: 5; /* Debe estar detrás del marco, pero delante del fondo */
+    
+    /* Propiedades para el contenido/imagen dentro de la pantalla */
+    overflow: hidden;
+    border-radius: 2px; /* Ligeros bordes redondeados si la pantalla los tiene */
+    background-color: var(--color-bg-dark); /* Fondo de la pantalla si no hay imagen */
+}
+
+.screen-image {
+    /* La imagen se ajusta para cubrir completamente el área definida */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
+}
+
+/* Nota: Los porcentajes (top, left, width, height) pueden necesitar ajustes finos (p. ej., de 5.5% a 6%) 
+   dependiendo de la imagen exacta del portátil que uses. */
