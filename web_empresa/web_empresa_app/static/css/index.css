@@ -4,14 +4,14 @@
 /* 2. Variables de Color (Basadas en la imagen) */
 :root {
     /* Colores Principales de la Paleta */
-    --color-bg-dark: #0D1B2A;       
-    --color-bg-secondary: #1B263B;  
-    --color-text-light: #E0E1DD;    
+    --color-bg-dark: #0D1B2A;
+    --color-bg-secondary: #1B263B;
+    --color-text-light: #E0E1DD;
     --color-text-secondary: #778DA9;
-    --color-border: #415A77;        
+    --color-border: #415A77;
 
     /* Color de Acento */
-    --color-accent-primary: #59EE8F; 
+    --color-accent-primary: #59EE8F;
 }
 
 /* 3. Reset y Estilos Base */
@@ -27,7 +27,7 @@ body {
     color: var(--color-text-light);
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 a {
@@ -73,9 +73,9 @@ a:hover {
 }
 
 .logo img {
-    height: 24px; 
+    height: 24px;
     margin-right: 8px;
-    filter: brightness(0) invert(1); 
+    filter: brightness(0) invert(1);
 }
 
 .nav-menu ul {
@@ -109,11 +109,11 @@ a:hover {
 
 .btn-buy {
     background-color: var(--color-accent-primary);
-    color: var(--color-bg-dark); 
+    color: var(--color-bg-dark);
 }
 
 .btn-buy:hover {
-    background-color: #38c86d; 
+    background-color: #38c86d;
     color: var(--color-bg-dark);
 }
 
@@ -134,7 +134,7 @@ a:hover {
     position: relative;
     /* Fondo con líneas geométricas */
     background-image: linear-gradient(rgba(13, 27, 42, 0.9) 2px, transparent 2px),
-                      linear-gradient(90deg, rgba(13, 27, 42, 0.9) 2px, transparent 2px);
+        linear-gradient(90deg, rgba(13, 27, 42, 0.9) 2px, transparent 2px);
     background-size: 50px 50px;
 }
 
@@ -169,12 +169,12 @@ a:hover {
     width: 80%;
     max-width: 1000px;
     background-color: var(--color-bg-secondary);
-    border-radius: 15px 15px 0 0; 
+    border-radius: 15px 15px 0 0;
     padding: 15px;
     border: 1px solid var(--color-border);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
     position: relative;
-    transform: translateY(0px); 
+    transform: translateY(0px);
 }
 
 /* Base de la 'laptop' */
@@ -194,7 +194,7 @@ a:hover {
     border-radius: 10px;
     overflow: hidden;
     padding: 20px;
-    min-height: 450px; 
+    min-height: 450px;
 }
 
 .header-mockup {
@@ -259,7 +259,7 @@ a:hover {
 .image-mockup img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5)); 
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
 }
 
 /* Iconos de Tecnología (Mockup) */
@@ -270,7 +270,8 @@ a:hover {
     font-size: 0.8em;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permitir que los íconos se envuelvan */
+    flex-wrap: wrap;
+    /* Permitir que los íconos se envuelvan */
     gap: 15px;
 }
 
@@ -305,18 +306,19 @@ a:hover {
     padding: 10px 0;
     font-size: 0.85em;
     z-index: 90;
-    
+
 }
 
 /* 10. Media Queries para Responsive Design */
 
 /* --- Tablet (Pantallas hasta 1024px) --- */
 @media (max-width: 1024px) {
+
     /* Header */
     .nav-menu ul {
         gap: 20px;
     }
-    
+
     /* Hero */
     .hero-content h1 {
         font-size: 3em;
@@ -326,7 +328,7 @@ a:hover {
     .macbook-frame {
         width: 90%;
     }
-    
+
     .main-mockup {
         flex-direction: column;
         padding: 30px 10px;
@@ -337,18 +339,21 @@ a:hover {
         max-width: 90%;
         text-align: center;
     }
+
     .text-mockup h2 {
         font-size: 2.5em;
     }
-    
+
     .image-mockup {
-        order: -1; /* Mover la imagen arriba en la columna */
+        order: -1;
+        /* Mover la imagen arriba en la columna */
     }
-    
+
     /* Mockup Header simplificado */
     .nav-mockup {
-        display: none; 
+        display: none;
     }
+
     .header-mockup {
         justify-content: center;
         gap: 30px;
@@ -366,20 +371,25 @@ a:hover {
         padding: 15px 5%;
         /* El menú de navegación se oculta para simplificar en móvil */
     }
+
     .nav-menu {
         display: none;
     }
+
     .btn-buy {
-        display: none; /* Ocultar el botón Buy Now del header */
+        display: none;
+        /* Ocultar el botón Buy Now del header */
     }
-    
+
     /* Hero */
     .hero-content h1 {
         font-size: 2em;
     }
+
     .hero-content p {
         font-size: 1em;
     }
+
     .btn-primary {
         padding: 12px 25px;
         font-size: 0.9em;
@@ -390,27 +400,30 @@ a:hover {
         width: 95%;
         padding: 10px;
     }
+
     .screen-content {
         min-height: 350px;
         padding: 10px;
     }
+
     .text-mockup h2 {
         font-size: 1.8em;
     }
+
     .tech-icons-mockup {
         justify-content: space-around;
         gap: 10px;
     }
-    
+
     /* Elementos fijos */
     .floating-buy-btn {
         bottom: 10px;
         left: 10px;
     }
-    
+
     /* La barra inferior se simplifica o se oculta */
     .bottom-bar-template {
-        display: none; 
+        display: none;
     }
 }
 
@@ -421,14 +434,17 @@ a:hover {
     justify-content: center;
     position: relative;
     padding-bottom: 100px;
-    margin-top: 0; /* Separación del texto principal */
+    margin-top: 0;
+    /* Separación del texto principal */
 }
 
 .macbook-mockup-frame {
     /* Establece el contexto de posicionamiento para los elementos internos */
-    position: relative; 
-    width: 80%; /* Ancho general del mockup */
-    max-width: 900px; /* Ancho máximo */
+    position: relative;
+    width: 80%;
+    /* Ancho general del mockup */
+    max-width: 900px;
+    /* Ancho máximo */
     height: auto;
 }
 
@@ -437,183 +453,204 @@ a:hover {
     width: 100%;
     height: auto;
     display: block;
-    z-index: 10; /* Asegura que el marco esté por encima de la pantalla */
+    z-index: 10;
+    /* Asegura que el marco esté por encima de la pantalla */
 }
 
 .screen-content-overlay {
     /* Posicionamiento y tamaño del área de la pantalla */
     position: absolute;
-    top: 10%;    /* Ajuste superior, depende del marco de la imagen */
-    left: 13%;  /* Ajuste izquierdo */
-    width: 75%;   /* Ancho de la pantalla */
-    height: 78%;  /* Altura de la pantalla */
-    z-index: 5; /* Debe estar detrás del marco, pero delante del fondo */
-    
+    top: 10%;
+    /* Ajuste superior, depende del marco de la imagen */
+    left: 13%;
+    /* Ajuste izquierdo */
+    width: 75%;
+    /* Ancho de la pantalla */
+    height: 78%;
+    /* Altura de la pantalla */
+    z-index: 5;
+    /* Debe estar detrás del marco, pero delante del fondo */
+
     /* Propiedades para el contenido/imagen dentro de la pantalla */
     overflow: hidden;
-    border-radius: 2px; /* Ligeros bordes redondeados si la pantalla los tiene */
-    background-color: var(--color-bg-dark); /* Fondo de la pantalla si no hay imagen */
+    border-radius: 2px;
+    /* Ligeros bordes redondeados si la pantalla los tiene */
+    background-color: var(--color-bg-dark);
+    /* Fondo de la pantalla si no hay imagen */
 }
 
 .screen-image {
     /* La imagen se ajusta para cubrir completamente el área definida */
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
+    object-fit: cover;
+    /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
 }
 
-/* Nota: Los porcentajes (top, left, width, height) pueden necesitar ajustes finos (p. ej., de 5.5% a 6%) 
-   dependiendo de la imagen exacta del portátil que uses. */
+/* Asegúrate de que las variables de color estén definidas en :root en tu styles.css */
+/* ... (Variables y resets anteriores) ... */
 
-
-/*
-  IMPORTANTE: Para que el diseño se vea exactamente como en la imagen,
-  es necesario usar una fuente con un estilo similar a "Poppins"
-  o "Montserrat" para el texto principal y una fuente serif/bold
-  para el encabezado, si no está ya configurada en el navegador.
-*/
-
-:root {
-    /* Variables de color para fácil mantenimiento */
-    --color-principal: #000000;
-    --color-fondo: #ffffff;
-    --color-texto-gris: #555555;
-    --color-borde-gris: #cccccc;
+/* Estilos específicos para la sección "Sobre Nosotros" */
+.about-conversations-section {
+    background-color: var(--color-text-secondary);
+    /* Fondo oscuro */
+    padding: 80px 5%;
+    color: var(--color-text-light);
 }
 
-/* 1. Estilos Globales y Tipografía */
-body {
-    font-family: 'Arial', sans-serif; /* Cambiar a la fuente deseada (ej. Poppins) */
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8; /* Un gris muy claro para el fondo de la página */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    padding: 40px 0;
+    gap: 5%;
+    justify-content: space-between;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* --- Columna Izquierda (Título e Imagen) --- */
+.conversations-left {
+    flex: 1;
+    max-width: 550px;
 }
 
-/* 2. Contenedor Principal */
-.contenedor-principal {
-    width: 90%;
-    max-width: 1000px; /* Limita el ancho total del diseño */
-    background-color: var(--color-fondo);
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-/* 3. Encabezado */
-.encabezado-conversaciones {
-    margin-bottom: 30px;
-    grid-column: 1 / -1; /* Ocupa todo el ancho en el diseño de cuadrícula */
-}
-
-.encabezado-conversaciones h1 {
-    font-size: 3.5rem; /* Título grande de alto impacto */
-    font-weight: 800; /* Negrita pesada */
+.section-title {
+    font-size: 3em;
+    font-weight: 800;
     line-height: 1.1;
-    color: var(--color-principal);
-    margin: 0;
+    margin-bottom: 30px;
+    color: var(--color-text-light);
+    /* Texto claro sobre fondo oscuro */
 }
 
-/* 4. Contenido de Doble Columna (Main) */
-.contenido-doble {
-    display: flex;
-    gap: 50px; /* Espacio entre la imagen y las acciones */
+.image-placeholder {
+    width: 100%;
+    /* La imagen debe mantener su proporción original, la altura es automática */
 }
 
-/* Asegura que el contenido se ajuste si la pantalla es muy pequeña */
-@media (max-width: 850px) {
-    .contenido-doble {
-        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
-        gap: 30px;
-    }
-}
-
-/* 5. Sección de la Imagen */
-.seccion-imagen {
-    flex: 1; /* Ocupa 1 parte del espacio disponible */
-    min-width: 0;
-}
-
-.seccion-imagen img {
+.conversation-image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    /* Aplicar filtro B/N como en la imagen de referencia (opcional) */
+    filter: grayscale(100%);
+    border-radius: 4px;
 }
 
-/* 6. Sección de Acciones (Derecha) */
-.seccion-acciones {
-    flex: 1.2; /* Ocupa un poco más de espacio que la imagen */
-    color: var(--color-texto-gris);
-    font-size: 1rem;
+/* --- Columna Derecha (Texto y Botones) --- */
+.conversations-right {
+    flex: 1;
+    max-width: 500px;
 }
 
-.descripcion-organizacion {
-    margin-top: 0;
+.description-text {
+    font-size: 1.1em;
+    line-height: 1.5;
     margin-bottom: 40px;
-    line-height: 1.6;
-    color: var(--color-texto-gris);
+    color: var(--color-text-secondary);
+    /* Texto secundario más suave */
 }
 
-/* 7. Contenedor de Botones (Grid) */
-.contenedor-botones {
+/* Grid de Botones de Acción */
+.action-buttons-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 15px; /* Espacio entre los botones */
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     margin-bottom: 40px;
 }
 
-.boton-accion {
-    background-color: var(--color-principal);
-    color: var(--color-fondo);
+.btn-action {
+    display: block;
     text-align: center;
-    padding: 15px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: 2px solid var(--color-principal); /* Borde para el efecto hover */
-    transition: background-color 0.3s, color 0.3s;
-    text-transform: uppercase;
+    padding: 18px 25px;
+    background-color: var(--color-bg-secondary);
+    /* Fondo oscuro secundario */
+    color: var(--color-text-light);
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid var(--color-bg-secondary);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.boton-accion:hover {
-    background-color: var(--color-fondo);
-    color: var(--color-principal);
-    cursor: pointer;
+.btn-action:hover {
+    background-color: var(--color-accent-primary);
+    /* Acento verde al pasar el ratón */
+    color: var(--color-bg-dark);
+    /* Texto oscuro para contraste */
+    border-color: var(--color-accent-primary);
 }
 
-/* 8. Separador y Redes Sociales */
-.separador-social {
+/* Separador de Redes Sociales */
+.social-divider {
     border: none;
-    border-top: 1px solid var(--color-borde-gris);
-    margin: 40px 0 20px 0;
+    height: 1px;
+    background-color: var(--color-border);
+    /* Línea divisoria sutil */
+    margin: 40px 0;
 }
 
-.titulo-social {
+.social-media p {
     text-align: center;
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: var(--color-principal);
-    margin-bottom: 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: var(--color-text-secondary);
 }
 
-.iconos-sociales {
+.social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    font-size: 1.5rem; /* Tamaño de los iconos/emojis */
+    gap: 30px;
 }
 
-.icono-social {
-    color: var(--color-principal);
-    transition: color 0.3s;
+.social-icon {
+    font-size: 1.5em;
+    color: var(--color-text-secondary);
 }
 
-.icono-social:hover {
-    color: var(--color-texto-gris);
+.social-icon:hover {
+    color: var(--color-accent-primary);
+}
+
+
+/* --- Responsive Design para la sección (Móvil y Tablet) --- */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        /* Apila las columnas */
+        gap: 40px;
+    }
+
+    .conversations-left,
+    .conversations-right {
+        max-width: 100%;
+        /* Ocupan todo el ancho */
+    }
+
+    .section-title {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .image-placeholder {
+        max-width: 80%;
+        /* Centrar imagen */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .action-buttons-grid {
+        grid-template-columns: 1fr;
+        /* Una columna en móvil para botones grandes */
+    }
+
+    .description-text {
+        font-size: 1em;
+    }
 }
