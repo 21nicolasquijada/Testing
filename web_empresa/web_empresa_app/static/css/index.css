@@ -126,6 +126,13 @@ a {
 }
 
 /* 7. Sección Principal (Hero Section) */
+
+.background-hero-section{
+    width: 100%;
+    height: auto;
+    background: url('../img/background_index_4.svg');
+}
+
 .hero-section {
     text-align: center;
     padding: 50px 5% 0;
@@ -133,9 +140,8 @@ a {
     margin: 0 auto;
     position: relative;
     /* Fondo con líneas geométricas */
-    background-image: linear-gradient(rgba(13, 27, 42, 0.9) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(13, 27, 42, 0.9) 2px, transparent 2px);
-    background-size: 50px 50px;
+    /* background-image: linear-gradient(rgba(13, 27, 42, 0.9) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(13, 27, 42, 0.9) 2px, transparent 2px); */
 }
 
 .hero-content {
