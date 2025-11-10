@@ -654,3 +654,167 @@ a:hover {
         font-size: 1em;
     }
 }
+
+
+/* ==================================== */
+/* 1. Estilos de la Sección y el Grid  */
+/* ==================================== */
+
+.services-section {
+    padding: 80px 20px;
+    text-align: center;
+    /* --- FONDO SUGERIDO para que se note la transparencia --- */
+    /* ---------------------------------------------------- */
+    min-height: 70vh; /* Para que se vea bien si hay poco contenido */
+}
+
+.services-title {
+    margin-bottom: 65px;
+    font-size: 2.5em;
+    color: #ffffff; /* Título blanco sobre fondo oscuro */
+}
+
+.services-grid {
+    display: grid;
+    /* 3 columnas iguales */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 30px;
+
+    /* Centrar y limitar ancho */
+    max-width: 1200px; 
+    margin: 30px auto 0 auto; 
+}
+
+
+/* ==================================== */
+/* 2. Estilos de la Tarjeta Base (Glassmorphism) */
+/* ==================================== */
+
+.service-card {
+    /* Fondo semi-transparente (Blanco con opacidad) */
+    background: rgba(255, 255, 255, 0.15); 
+    
+    /* Efecto clave de vidrio esmerilado */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    
+    /* Borde sutil */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Contenido de la tarjeta */
+    position: relative; 
+    z-index: 1; 
+    max-height: 250px; 
+    overflow: hidden;
+    color: #ffffff; /* Texto principal blanco */
+
+    /* Transición suave */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s ease, 
+                background 0.3s ease, /* Agregamos transición al background para el hover */
+                max-height 0.5s ease;
+}
+
+.service-card .service-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 50%; /* Opcional: para que las imágenes se vean redondas */
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    transition: width 0.5s, height 0.5s;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #ffffff; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Ocultar la descripción inicialmente */
+.service-card .service-description {
+    opacity: 0; 
+    max-height: 0; 
+    padding-top: 0;
+    transition: opacity 0.5s ease 0.1s, max-height 0.5s ease, padding-top 0.5s ease;
+    font-size: 1em;
+    color: #dddddd; 
+}
+
+/* ==================================== */
+/* 3. Efecto HOVER (Expansión dramática y Solapamiento)*/
+/* ==================================== */
+
+.service-card:hover {
+    z-index: 10; 
+    /* Aumenta la opacidad en hover para darle más solidez */
+    background: rgba(255, 255, 255, 0.3); 
+    
+    /* Expansión y elevación */
+    transform: scale(1.4) translateY(-10px); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+    
+    max-height: 600px; 
+}
+
+.service-card:hover .service-image {
+    width: 120px;
+    height: 120px;
+}
+
+.service-card:hover .service-description {
+    /* Mostrar la descripción */
+    opacity: 1; 
+    max-height: 200px; 
+    padding-top: 20px; 
+}
+
+
+/* ==================================== */
+/* 4. Responsividad (Media Queries)     */
+/* ==================================== */
+
+/* Ajuste para evitar que el max-width aplaste el contenido en pantallas grandes */
+@media (max-width: 1250px) {
+    .services-grid {
+        max-width: 95%; 
+    }
+}
+
+/* Tablets (900px y menor) */
+@media (max-width: 900px) {
+    .services-grid {
+        /* 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .service-card:hover {
+        /* Reducir la expansión en tablets */
+        transform: scale(1.2) translateY(-5px); 
+    }
+}
+
+/* Móviles (600px y menor) */
+@media (max-width: 600px) {
+    .services-grid {
+        /* 1 columna */
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+    
+    .service-card:hover {
+        /* Deshabilitar solapamiento y usar expansión suave en móvil */
+        transform: scale(1.05) translateY(-5px); 
+    }
+}
