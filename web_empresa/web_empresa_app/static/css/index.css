@@ -851,3 +851,60 @@ a {
         transform: scale(1.05) translateY(-5px); 
     }
 }
+
+.our-projects-section{
+    background-color: var(--color-bg-dark);
+    padding: 80px 20px;
+}
+
+.our-projects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.our-projects h3{
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--color-text-light);
+    margin-bottom: 65px;
+}
+
+.swiper {
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-slider{
+    border: 3px solid var(--color-border);
+    padding: 10px;
+    background-color: var(--color-bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.card-slider img{
+    width: 40%;
+    max-width: 400px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-slider-content{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+

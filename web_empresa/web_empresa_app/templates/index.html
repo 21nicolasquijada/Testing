@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeniqs - IT Services & Solutions</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
 
 </head>
@@ -98,14 +100,14 @@
         <div class="services-grid">
 
             <div class="service-card" data-title="Desarrollo Web" data-image-src="{% static 'img/services.jpg' %}"
-                data-detail="Nuestro servicio de Desarrollo Web incluye planificación UX/UI, maquetación profesional, desarrollo backend robusto (Django/Flask/Node.js) y optimización SEO. Entregamos sitios modernos, veloces y listos para escalar a nivel empresarial. Nos enfocamos en un código limpio y mantenible. ">
+                data-detail="Nuestro servicio de Desarrollo Web incluye planificación UX/UI, maquetación profesional, desarrollo backend robusto y optimización SEO. Entregamos sitios modernos, veloces y listos para escalar a nivel empresarial. Nos enfocamos en un código limpio y mantenible.">
                 <img src="{% static 'img/services.jpg' %}" alt="Desarrollo Web" class="service-image">
                 <h3>Desarrollo Web</h3>
                 <p class="service-description">Creamos sitios web modernos, rápidos y optimizados para tu negocio.</p>
             </div>
 
             <div class="service-card" data-title="Soporte Técnico" data-image-src="{% static 'img/services.jpg' %}"
-                data-detail="Ofrecemos planes de soporte 24/7 para sistemas operativos, hardware y software. Incluye mantenimiento preventivo, resolución de fallas remotas y presenciales, gestión de parches de seguridad y copias de seguridad continuas para asegurar la continuidad de tu negocio.">
+                data-detail="Nuestro compromiso va más allá del desarrollo. Ofrecemos soporte técnico 24/7 especializado para los proyectos de software que creamos para ti. Este servicio integral incluye el mantenimiento preventivo, la gestión proactiva de parches de seguridad, copias de seguridad continuas y la rápida resolución de fallas para asegurar la continuidad y el óptimo funcionamiento de tu inversión.">
                 <img src="{% static 'img/services.jpg' %}" alt="Soporte Técnico" class="service-image">
                 <h3>Soporte Técnico</h3>
                 <p class="service-description">Brindamos asistencia continua para mantener tus sistemas funcionando sin
@@ -113,7 +115,7 @@
             </div>
 
             <div class="service-card" data-title="Ciberseguridad" data-image-src="{% static 'img/services.jpg' %}"
-                data-detail="Implementamos soluciones de defensa perimetral, detección de intrusiones, auditorías de seguridad y formación para empleados. Protegemos contra ransomware, phishing y ataques DDoS, manteniendo la integridad y confidencialidad de tus activos digitales más sensibles.">
+                data-detail="Mediante auditorías de seguridad exhaustivas, identificamos proactivamente las vulnerabilidades críticas en su infraestructura. Posteriormente, implementamos robustas soluciones de detección de intrusiones para identificar y neutralizar amenazas en tiempo real. Este enfoque integral nos permite realizar una efectiva gestión de riesgos, complementada con la defensa perimetral y la formación de empleados, protegiendo sus activos digitales contra ataques como ransomware, phishing y DDoS, y garantizando su integridad y confidencialidad.">
                 <img src="{% static 'img/services.jpg' %}" alt="Ciberseguridad" class="service-image">
                 <h3>Ciberseguridad</h3>
                 <p class="service-description">Protegemos tu información mediante soluciones avanzadas de seguridad
@@ -121,7 +123,7 @@
             </div>
 
             <div class="service-card" data-title="Desarrollo de Apps" data-image-src="{% static 'img/services.jpg' %}"
-                data-detail="Creamos aplicaciones móviles nativas (iOS y Android) y multiplataforma. Cubrimos todo el ciclo de vida: desde la ideación y diseño UX/UI, hasta el lanzamiento en las tiendas de aplicaciones y el mantenimiento post-lanzamiento. Apps potentes y escalables.">
+                data-detail="Creamos aplicaciones móviles y multiplataforma. Cubrimos todo el ciclo de vida: desde la ideación y diseño UX/UI, hasta el lanzamiento en las tiendas de aplicaciones y el mantenimiento post-lanzamiento. Apps potentes y escalables.">
                 <img src="{% static 'img/services.jpg' %}" alt="Desarrollo de Apps" class="service-image">
                 <h3>Desarrollo de Apps</h3>
                 <p class="service-description">Creamos aplicaciones móviles potentes y adaptadas a tus necesidades.</p>
@@ -159,6 +161,44 @@
             </div>
         </div>
     </div>
+
+    <section class="our-projects-section">
+        <div class="our-projects">
+            <h3>Nuestros trabajos</h3>
+            <!-- Carrusel Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card-slider">
+                            <img src="{% static 'img/fondo.png' %}" alt="imagen-trabajo-uno">
+                            <h4>Hola todos como estamos</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi facere voluptates cum ex vero delectus quas veritatis facilis voluptatum. Cum quod possimus molestias eligendi neque, animi explicabo quasi magnam! Labore.</p>   
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card-slider">
+                            <img src="{% static 'img/fondo.png' %}" alt="">
+                            <div class="card-slider-content">
+                                <h4>Hola todos</h4>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio suscipit libero magni dignissimos officia, quas repellendus maiores est necessitatibus quasi iusto ducimus obcaecati amet voluptatum architecto quis assumenda dolorem aliquid!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card-slider">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <script src="../static/js/index.js"></script>
 </body>
 
