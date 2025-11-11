@@ -9,12 +9,13 @@
     <title>Zeniqs - IT Services & Solutions</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 
+
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <span><img src="logo.png" alt="Zeniqs Logo"> Zeniqs</span>
+            <span><img src="logo.png" alt="Zeniqs Logo"></span>
         </div>
         <nav class="nav-menu">
             <ul>
@@ -95,40 +96,47 @@
         <h2 class="services-title">Nuestros Servicios</h2>
 
         <div class="services-grid">
-            <div class="service-card">
+
+            <div class="service-card" data-title="Desarrollo Web" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Nuestro servicio de Desarrollo Web incluye planificación UX/UI, maquetación profesional, desarrollo backend robusto (Django/Flask/Node.js) y optimización SEO. Entregamos sitios modernos, veloces y listos para escalar a nivel empresarial. Nos enfocamos en un código limpio y mantenible. ">
                 <img src="{% static 'img/services.jpg' %}" alt="Desarrollo Web" class="service-image">
                 <h3>Desarrollo Web</h3>
                 <p class="service-description">Creamos sitios web modernos, rápidos y optimizados para tu negocio.</p>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-title="Soporte Técnico" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Ofrecemos planes de soporte 24/7 para sistemas operativos, hardware y software. Incluye mantenimiento preventivo, resolución de fallas remotas y presenciales, gestión de parches de seguridad y copias de seguridad continuas para asegurar la continuidad de tu negocio.">
                 <img src="{% static 'img/services.jpg' %}" alt="Soporte Técnico" class="service-image">
                 <h3>Soporte Técnico</h3>
                 <p class="service-description">Brindamos asistencia continua para mantener tus sistemas funcionando sin
                     fallas.</p>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-title="Ciberseguridad" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Implementamos soluciones de defensa perimetral, detección de intrusiones, auditorías de seguridad y formación para empleados. Protegemos contra ransomware, phishing y ataques DDoS, manteniendo la integridad y confidencialidad de tus activos digitales más sensibles.">
                 <img src="{% static 'img/services.jpg' %}" alt="Ciberseguridad" class="service-image">
                 <h3>Ciberseguridad</h3>
                 <p class="service-description">Protegemos tu información mediante soluciones avanzadas de seguridad
                     digital.</p>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-title="Desarrollo de Apps" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Creamos aplicaciones móviles nativas (iOS y Android) y multiplataforma. Cubrimos todo el ciclo de vida: desde la ideación y diseño UX/UI, hasta el lanzamiento en las tiendas de aplicaciones y el mantenimiento post-lanzamiento. Apps potentes y escalables.">
                 <img src="{% static 'img/services.jpg' %}" alt="Desarrollo de Apps" class="service-image">
                 <h3>Desarrollo de Apps</h3>
                 <p class="service-description">Creamos aplicaciones móviles potentes y adaptadas a tus necesidades.</p>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-title="Consultoría IT" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Analizamos tu infraestructura actual y ofrecemos estrategias para la transformación digital. Asesoramos en la selección de hardware, migración a nuevos sistemas, optimización de procesos y la implementación de metodologías ágiles para mejorar la eficiencia operativa.">
                 <img src="{% static 'img/services.jpg' %}" alt="Consultoría IT" class="service-image">
                 <h3>Consultoría IT</h3>
                 <p class="service-description">Te asesoramos en la adopción de tecnologías para optimizar tu negocio.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-card" data-title="Cloud Solutions" data-image-src="{% static 'img/services.jpg' %}"
+                data-detail="Diseñamos e implementamos arquitecturas en AWS, Azure y Google Cloud. Ofrecemos servicios de IaaS, PaaS y SaaS. Esto incluye migración de servidores, gestión de bases de datos, soluciones de respaldo en la nube y optimización de costos en la infraestructura cloud.">
                 <img src="{% static 'img/services.jpg' %}" alt="Cloud Solutions" class="service-image">
                 <h3>Cloud Solutions</h3>
                 <p class="service-description">Implementamos soluciones en la nube seguras y escalables.</p>
@@ -136,6 +144,22 @@
         </div>
     </section>
 
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Imagen del Servicio" class="modal-image">
+
+                <div class="modal-text">
+                    <h2 id="modal-title">Título del Servicio</h2>
+                    <p id="modal-description">Aquí irá la descripción muy a detalle de lo que se realiza en el servicio.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/index.js"></script>
 </body>
 
 

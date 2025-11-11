@@ -1,6 +1,6 @@
 /* 1. Importación de Fuente Minimalista */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
+/* Coloca esto en tu archivo CSS (o en el <style> de tu HTML) */
 /* 2. Variables de Color (Basadas en la imagen) */
 :root {
     /* Colores Principales de la Paleta */
@@ -431,6 +431,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
     /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
 }
 
@@ -573,8 +574,16 @@ a {
 }
 
 
+/* Variables (Asegúrate de definir estas variables en tu :root o body) */
+/* :root {
+    --color-bg-secondary: #1a1a2e; 
+    --color-text-secondary: #f0f0f0;
+    --color-accent: #00bcd4;
+}
+*/
+
 /* ==================================== */
-/* 1. Estilos de la Sección y el Grid  */
+/* 1. Estilos de la Sección y el Grid  */
 /* ==================================== */
 
 .services-section {
@@ -583,12 +592,12 @@ a {
     text-align: center;
     /* --- FONDO SUGERIDO para que se note la transparencia --- */
     /* ---------------------------------------------------- */
-    min-height: 70vh; /* Para que se vea bien si hay poco contenido */
+    min-height: 70vh; 
 }
 
 .services-title {
     margin-bottom: 65px;
-    font-size: 2.5em;
+    font-size: 2em;
     color: #ffffff; /* Título blanco sobre fondo oscuro */
 }
 
@@ -634,11 +643,12 @@ a {
     max-height: 250px; 
     overflow: hidden;
     color: #ffffff; /* Texto principal blanco */
+    cursor: pointer; /* Indica que es clickeable */
 
     /* Transición suave */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
                 box-shadow 0.5s ease, 
-                background 0.3s ease, /* Agregamos transición al background para el hover */
+                background 0.3s ease, 
                 max-height 0.5s ease;
 }
 
@@ -647,7 +657,7 @@ a {
     height: 80px;
     object-fit: cover;
     margin-bottom: 15px;
-    border-radius: 50%; /* Opcional: para que las imágenes se vean redondas */
+    border-radius: 50%; 
     border: 3px solid rgba(255, 255, 255, 0.5);
     transition: width 0.5s, height 0.5s;
 }
@@ -697,7 +707,93 @@ a {
 
 
 /* ==================================== */
-/* 4. Responsividad (Media Queries)     */
+/* 4. Estilos del Modal Pop-up (Glassmorphism)         */
+/* ==================================== */
+
+/* Fondo que cubre toda la pantalla (el "telón") */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 20; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    /* Fondo oscuro semitransparente para el telón */
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+/* Contenido del Modal (La caja central) */
+.modal-content {
+    margin: 10% auto; /* Centrar verticalmente y un margen superior */
+    padding: 30px;
+    width: 80%; /* Ancho base */
+    height: auto;
+    max-width: 900px; /* Ancho máximo */
+    position: relative;
+    border-radius: 15px; 
+    
+    /* Efecto Glassmorphism para el modal */
+    background: rgba(65,90,119,0.3); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+/* Diseño de la imagen a la izquierda y el texto a la derecha */
+.modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start; 
+    margin-top: 15px;
+}
+
+.modal-image {
+    width: 40%; 
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.modal-text {
+    width: 60%; 
+    text-align: left;
+}
+
+.modal-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.modal-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Botón de Cierre (la X) */
+.close-button {
+    color: #ffffff;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-accent, #000000); 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ==================================== */
+/* 5. Responsividad (Media Queries)     */
 /* ==================================== */
 
 /* Ajuste para evitar que el max-width aplaste el contenido en pantallas grandes */
@@ -721,7 +817,28 @@ a {
     }
 }
 
-/* Móviles (600px y menor) */
+/* Móviles (768px y menor) para el modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 5% auto;
+        padding: 20px;
+    }
+    
+    .modal-body {
+        /* Apilar imagen y texto en pantallas pequeñas */
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .modal-image,
+    .modal-text {
+        width: 100%;
+        max-height: none; 
+    }
+}
+
+/* Móviles (600px y menor) para el grid */
 @media (max-width: 600px) {
     .services-grid {
         /* 1 columna */
