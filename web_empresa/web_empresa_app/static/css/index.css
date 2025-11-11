@@ -28,6 +28,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
 }
 
 a {
@@ -52,12 +53,17 @@ a {
 
 /* 5. Encabezado y Navegación */
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
     align-items: center;
     padding: 20px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(224,225,221,0.02);
 }
 
 .logo span {
@@ -135,7 +141,7 @@ a {
 
 .hero-section {
     text-align: center;
-    padding: 50px 5% 0;
+    padding: 140px 5% 0;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -201,71 +207,6 @@ a {
     overflow: hidden;
     padding: 20px;
     min-height: 450px;
-}
-
-.header-mockup {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-accent-primary);
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: var(--color-bg-dark);
-    margin-bottom: 20px;
-}
-
-.logo-mockup {
-    font-weight: 700;
-    font-size: 1.1em;
-}
-
-.nav-mockup a {
-    color: var(--color-bg-dark);
-    margin-left: 15px;
-    font-size: 0.9em;
-    font-weight: 500;
-}
-
-.contact-btn-mockup {
-    background: var(--color-bg-dark);
-    color: var(--color-accent-primary);
-    border: none;
-    padding: 5px 12px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* Contenido Principal de la Pantalla (Mockup) */
-.main-mockup {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 20px;
-}
-
-.text-mockup {
-    text-align: left;
-    max-width: 45%;
-}
-
-.text-mockup h2 {
-    font-size: 3em;
-    font-weight: 800;
-    color: var(--color-accent-primary);
-    line-height: 1.1;
-    margin-bottom: 15px;
-}
-
-.text-mockup p {
-    color: var(--color-text-light);
-    font-size: 1em;
-}
-
-.image-mockup img {
-    max-width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
 }
 
 /* Iconos de Tecnología (Mockup) */
@@ -498,7 +439,7 @@ a {
 
 /* Estilos específicos para la sección "Sobre Nosotros" */
 .about-conversations-section {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-dark);
     /* Fondo oscuro */
     padding: 80px 5%;
     color: var(--color-text-light);
@@ -638,6 +579,7 @@ a {
 
 .services-section {
     padding: 80px 20px;
+    background-color: var(--color-bg-secondary);
     text-align: center;
     /* --- FONDO SUGERIDO para que se note la transparencia --- */
     /* ---------------------------------------------------- */
@@ -669,7 +611,7 @@ a {
 
 .service-card {
     /* Fondo semi-transparente (Blanco con opacidad) */
-    background: rgba(255, 255, 255, 0.15); 
+    background: rgba(65,90,119,0.15); 
     
     /* Efecto clave de vidrio esmerilado */
     backdrop-filter: blur(10px); 
@@ -713,7 +655,7 @@ a {
 .service-card h3 {
     margin-bottom: 2px;
     font-size: 1.5em;
-    color: var(--color-text-light); 
+    color: var(--color-text-secondary); 
 }
 
 /* Ocultar la descripción inicialmente */
@@ -723,7 +665,7 @@ a {
     padding-top: 0;
     transition: opacity 0.5s ease 0.1s, max-height 0.5s ease, padding-top 0.5s ease;
     font-size: 1em;
-    color: #dddddd; 
+    color: var(--color-text-secondary); 
 }
 
 /* ==================================== */
@@ -733,7 +675,7 @@ a {
 .service-card:hover {
     z-index: 10; 
     /* Aumenta la opacidad en hover para darle más solidez */
-    background: rgba(255, 255, 255, 0.3); 
+    background: rgba(52, 70, 92, 0.15); 
     
     /* Expansión y elevación */
     transform: scale(1.1) translateY(-10px); 
