@@ -872,27 +872,77 @@ a {
 }
 
 .swiper {
-  width: 80%;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1200px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .card-slider{
-    border: 3px solid var(--color-border);
+    border: 1px solid var(--color-border);
     padding: 10px;
     background-color: var(--color-bg-secondary);
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    border-radius: 10px;
 }
 
+.card-slider h4{
+    font-size: 1.5em;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+}
 
+.card-slider p{
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+}
+
+.project-type{
+    border: 1px solid var(--color-border);
+    font-size: 0.8em;
+    padding: 4px;
+    border-radius: 20px;
+    background-color: var(--color-border);
+    color: var(--color-text-light);
+    margin-bottom: 12px;
+}
+
+.project-technologies{
+    display: flex;
+    flex-direction: row;
+}
+
+.tech-icon-circle {
+    display: flex; /* Centra el SVG dentro del círculo */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+
+    width: 45px; /* Tamaño del círculo (ajusta según el tamaño final que quieras) */
+    height: 45px; /* Mismo tamaño para que sea un círculo perfecto */
+    border-radius: 50%; /* ¡Esto crea la forma circular! */
+
+    background-color: var(--color-bg-dark); /* Color de fondo del círculo */
+    border: 1px solid var(--color-border); /* Borde del círculo */
+
+    /* Puedes añadir un margen si necesitas espacio entre los círculos */
+    margin: 10px;
+}
+
+.tech-icon{
+    width: 40px;
+    height: 40px;
+    fill: var(--color-text-light);
+    padding: 8px;
+}
 
 .card-slider img{
-    width: 40%;
-    max-width: 400px;
+    width: 60%;
+    max-width: 800px;
     height: 100%;
     object-fit: cover;
     display: block;
@@ -903,7 +953,7 @@ a {
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
 }
 
 

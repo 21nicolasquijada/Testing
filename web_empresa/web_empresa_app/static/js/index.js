@@ -55,10 +55,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const swiper = new Swiper(".mySwiper", {
-    effect: "cards",   // Efecto tipo "cartas" (cards)
-    grabCursor: true,  // Cursor tipo mano
-    loop: true,        // Permite loop infinito
-    rotate: true,      // Rotación ligera de las cards
-    slideShadows: true // Sombras en las transiciones
+
+    // autoplay: {
+    //   delay: 3000, // Tiempo entre slides (ms)
+    //   disableOnInteraction: false, // Sigue auto-play al interactuar
+    // },
+
+    effect: "cards", // Cambia a "fade", "cube", "coverflow", "flip"
+    speed: 600,
+    rotate : true,
+    grabCursor : true, // Velocidad de transición
   });
 });
