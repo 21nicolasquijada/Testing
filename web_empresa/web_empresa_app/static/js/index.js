@@ -1,3 +1,6 @@
+// ===============================
+// 1️⃣  MODAL DE SERVICIOS
+// ===============================
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener elementos del DOM
     const modal = document.getElementById('service-modal');
@@ -11,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalImage = document.getElementById('modal-image');
 
     // 2. Función para abrir el modal
-    function openModal(card) {
+    function openModal(card) {  
         // Rellenar el contenido del modal con los datos del atributo data-*
         modalTitle.textContent = card.dataset.title;
         modalDescription.textContent = card.dataset.detail;
@@ -53,17 +56,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// ===============================
+// 2️⃣  SWIPER (CARRUSEL DE IMÁGENES)
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
+  let isPaused = false; // bandera para saber si el usuario pausó con hover
+
   const swiper = new Swiper(".mySwiper", {
+    effect: "cards",
+    speed: 1500,
+    rotate: true,
+    grabCursor: true,
 
-    // autoplay: {
-    //   delay: 3000, // Tiempo entre slides (ms)
-    //   disableOnInteraction: false, // Sigue auto-play al interactuar
-    // },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
 
-    effect: "cards", // Cambia a "fade", "cube", "coverflow", "flip"
-    speed: 600,
-    rotate : true,
-    grabCursor : true, // Velocidad de transición
+    on: {
+      reachEnd: function () {
+        const swiperInstance = this;
+
+        // Solo volver al principio si NO está pausado
+        if (!isPaused) {
+          swiperInstance.autoplay.stop();
+          setTimeout(() => {
+            swiperInstance.slideTo(0, 1000);
+            swiperInstance.autoplay.start();
+          }, 3000); // tiempo de espera antes de volver
+        }
+      },
+    },
+  });
+
+  // 🖱️ Pausar al pasar el mouse
+  const swiperEl = document.querySelector(".mySwiper");
+
+  swiperEl.addEventListener("mouseenter", () => {
+    isPaused = true;          // marcar que está pausado
+    swiper.autoplay.stop();   // detener autoplay
+  });
+
+  swiperEl.addEventListener("mouseleave", () => {
+    isPaused = false;         // quitar pausa
+    swiper.autoplay.start();  // reanudar autoplay
+  });
+});
+
+
+// ===============================
+// 3️⃣  FAQ (PREGUNTAS Y RESPUESTAS)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+
+      // Cerrar otros abiertos (opcional, para comportamiento tipo acordeón)
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        if (i !== item) i.classList.remove('active');
+      });
+
+      // Alternar el seleccionado
+      item.classList.toggle('active');
+    });
   });
 });
