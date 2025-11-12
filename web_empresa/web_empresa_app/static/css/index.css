@@ -853,8 +853,32 @@ a {
 }
 
 .our-projects-section{
-    background-color: var(--color-bg-dark);
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(13, 27, 42, 0.68);
     padding: 80px 20px;
+}
+
+.our-projects-section::before {
+    content: ""; 
+    
+    /* Posicionamiento y dimensiones */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* La imagen de fondo */
+    background-image: url('../img/fondo-code.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    /* El efecto de BLUR */
+    filter: blur(8px); /* Ajusta este valor */
+    
+    /* Colocamos la imagen detrás de la capa de color */
+    z-index: -1; 
 }
 
 .our-projects{
@@ -873,88 +897,179 @@ a {
 
 .swiper {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1024px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.card-slider{
-    border: 1px solid var(--color-border);
-    padding: 10px;
-    background-color: var(--color-bg-secondary);
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    border-radius: 10px;
+/* ======================== */
+/*   ESTILOS CARD SLIDER */
+/* ======================== */
+
+.card-slider {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  background-color: var(--color-bg-secondary);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite reacomodo del contenido */
 }
 
-.card-slider h4{
-    font-size: 1.5em;
-    color: var(--color-text-secondary);
-    margin-bottom: 12px;
+.card-slider h4 {
+  font-size: 1.5em;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
 }
 
-.card-slider p{
-    font-size: 1.1em;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    margin-bottom: 12px;
+.card-slider p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
 }
 
-.project-type{
-    border: 1px solid var(--color-border);
-    font-size: 0.8em;
-    padding: 4px;
-    border-radius: 20px;
-    background-color: var(--color-border);
-    color: var(--color-text-light);
-    margin-bottom: 12px;
+.project-type {
+  border: 1px solid var(--color-border);
+  font-size: 0.8em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: var(--color-border);
+  color: var(--color-text-light);
+  margin-bottom: 12px;
 }
 
-.project-technologies{
-    display: flex;
-    flex-direction: row;
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tech-icon-circle {
-    display: flex; /* Centra el SVG dentro del círculo */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-
-    width: 45px; /* Tamaño del círculo (ajusta según el tamaño final que quieras) */
-    height: 45px; /* Mismo tamaño para que sea un círculo perfecto */
-    border-radius: 50%; /* ¡Esto crea la forma circular! */
-
-    background-color: var(--color-bg-dark); /* Color de fondo del círculo */
-    border: 1px solid var(--color-border); /* Borde del círculo */
-
-    /* Puedes añadir un margen si necesitas espacio entre los círculos */
-    margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-bg-dark);
+  border: 1px solid var(--color-border);
 }
 
-.tech-icon{
-    width: 40px;
-    height: 40px;
-    fill: var(--color-text-light);
-    padding: 8px;
+.tech-icon {
+  width: 40px;
+  height: 40px;
+  fill: var(--color-text-light);
+  padding: 8px;
 }
 
-.card-slider img{
-    width: 60%;
-    max-width: 800px;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.card-slider img {
+  width: 50%;
+  max-width: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
 }
 
-.card-slider-content{
-    display: flex;
-    align-items: start;
-    justify-content: center;
+.card-slider-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 20px;
+  flex: 1;
+}
+
+/* ======================== */
+/*        RESPONSIVE         */
+/* ======================== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  .card-slider {
     flex-direction: column;
-    padding: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-slider img {
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .card-slider-content {
+    padding: 15px;
+    align-items: center;
+  }
+
+  .project-technologies {
+    justify-content: center;
+  }
 }
+
+/* Móviles (pantallas pequeñas) */
+@media (max-width: 768px) {
+  .card-slider {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .card-slider img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .card-slider-content h4 {
+    font-size: 1.3em;
+  }
+
+  .card-slider-content p {
+    font-size: 1em;
+  }
+
+  .tech-icon-circle {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+  }
+
+  .tech-icon {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+  }
+}
+
+/* Extra pequeño (teléfonos angostos) */
+@media (max-width: 480px) {
+  .card-slider-content {
+    padding: 10px;
+  }
+
+  .card-slider-content h4 {
+    font-size: 1.1em;
+  }
+
+  .card-slider-content p {
+    font-size: 0.9em;
+  }
+
+  .tech-icon-circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tech-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 
 .faq-section {
     background-color: var(--color-bg-secondary);
